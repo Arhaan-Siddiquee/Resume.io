@@ -1,20 +1,32 @@
-import React from 'react';
+import { pdf } from '@react-pdf/renderer';
+import ReactLatex from 'react-latex-next';
+import { Document, Page } from '@react-pdf/renderer';
 
 const DownloadButton = ({ latexCode }) => {
-  const handleDownload = () => {
-    // Convert LaTeX to PDF logic goes here
-    console.log('Downloading PDF...');
+  const generatePDF = async () => {
+    const doc = (
+      <Document>
+        <Page size="A4" style={{ padding: 30 }}>
+          <ReactLatex>{latexCode}</ReactLatex>
+        </Page>
+      </Document>
+    );
+
+    const blob = await pdf(doc).toBlob();
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'resume.pdf';
+    a.click();
   };
 
   return (
-    <div className="fixed bottom-4 right-4">
-      <button
-        onClick={handleDownload}
-        className="px-4 py-2 bg-purple-500 text-white font-semibold rounded-md shadow hover:bg-purple-600 focus:outline-none"
-      >
-        Download PDF
-      </button>
-    </div>
+    <button
+      className="bg-purple-500 text-white p-3 rounded-lg hover:bg-purple-400"
+      onClick={generatePDF}
+    >
+      Download PDF
+    </button>
   );
 };
 
