@@ -1,29 +1,18 @@
-import React, { useState } from "react";
-import Form from "./components/Form";
-import Preview from "./components/Preview";
-import ExportButton from "./components/ExportButton";
+import React from 'react';
+import CodeEditor from './components/CodeEditor';
+import PreviewPane from './components/PreviewPane';
+import DownloadButton from './components/DownloadButton';
 
-function App() {
-  const [details, setDetails] = useState({
-    personal: {},
-    education: [],
-    experience: [],
-    skills: [],
-    projects: [],
-    certifications: [],
-    hobbies: [],
-  });
+const App = () => {
+  const [latexCode, setLatexCode] = React.useState('');
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center">
-      <h1 className="text-4xl font-bold text-blue-600 mt-8">Resume.io</h1>
-      <div className="flex flex-wrap justify-around w-full mt-8 px-4">
-        <Form details={details} setDetails={setDetails} />
-        <Preview details={details} />
-      </div>
-      <ExportButton details={details} />
+    <div className="flex h-screen">
+      <CodeEditor latexCode={latexCode} setLatexCode={setLatexCode} />
+      <PreviewPane latexCode={latexCode} />
+      <DownloadButton latexCode={latexCode} />
     </div>
   );
-}
+};
 
 export default App;
