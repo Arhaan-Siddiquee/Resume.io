@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.Pane {
+  overflow: auto;
+}
+
+.Resizer {
+  background: #ddd;
+  width: 5px;
+  cursor: col-resize;
+}
