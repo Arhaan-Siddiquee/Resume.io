@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { AlertCircle, Download, RefreshCw, Copy, FileText, Loader, Check } from 'lucide-react';
-import docs from "../assets/docs.pdf"; // Path to your documentation PDF
-// Import html2pdf library via CDN in your HTML file:
-// <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+import docs from "../assets/docs.pdf";
 
 export default function AdvancedLaTeXEditor() {
   const [latex, setLatex] = useState('');

@@ -1,7 +1,7 @@
 // App.jsx
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./components/home"; // Assuming this is the current page
-import Latex from "./components/latex"; // Import your latex.jsx page
+import Home from "./components/home"; 
+import Latex from "./components/latex"; 
 
 function App() {
   return (
