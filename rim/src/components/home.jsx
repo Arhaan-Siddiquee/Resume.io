@@ -172,7 +172,7 @@ const Resumeio = () => {
             </p>
             <div className="mt-10 flex justify-center">
               <button className="bg-indigo-600 px-8 py-3 text-lg font-medium rounded-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 mr-4">
-                <a href="/latex">Try Editor Now</a>
+                <a href="/#/latex">Try Editor Now</a>
               </button>
             </div>  
           </motion.div>
@@ -330,7 +330,7 @@ const Resumeio = () => {
           
           <div className="mt-8 text-center">
             <button className="bg-indigo-600 px-8 py-3 text-lg font-medium rounded-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-              <a href="/latex">Try Editor Now</a>
+              <a href="/#/latex">Try Editor Now</a>
             </button>
           </div>
         </div>

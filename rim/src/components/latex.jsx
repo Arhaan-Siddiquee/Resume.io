@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { AlertCircle, Download, RefreshCw, Copy, FileText, Loader, Check } from 'lucide-react';
 import docs from "../assets/docs.pdf";
 
-export default function AdvancedLaTeXEditor() {
+export default function Latex() {
   const [latex, setLatex] = useState('');
   const [htmlPreview, setHtmlPreview] = useState('');
   const [isCompiling, setIsCompiling] = useState(false);
@@ -562,3 +562,4 @@ export default function AdvancedLaTeXEditor() {
     </div>
   );
 }
+
