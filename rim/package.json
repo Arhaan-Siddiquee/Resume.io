@@ -13,6 +13,7 @@
     "@monaco-editor/react": "^4.7.0",
     "@react-md/icon": "^5.1.6",
     "file-saver": "^2.0.5",
+    "framer-motion": "^12.6.5",
     "katex": "^0.16.22",
     "latex.js": "^0.12.6",
     "lucide-react": "^0.487.0",

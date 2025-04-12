@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import example from "../assets/example.png";
 import example2 from "../assets/exampletwo.png";
-import latex from "./latex.jsx";
 
 const Resumeio = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
