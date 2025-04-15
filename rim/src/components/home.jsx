@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import example from "../assets/example.png";
-import example2 from "../assets/exampletwo.png";
+import preview from "../assets/atspreview.gif";
 
 const Resumeio = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -165,7 +165,7 @@ const Resumeio = () => {
             variants={fadeIn}
           >
             <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl mb-6">
-              Create Perfect LaTeX Resumes <span className="text-indigo-500">Without the Hassle</span>
+              Create Perfect LaTeX Resumes <span className="text-indigo-500">Without the Hassle</span> and Enhance For ATS
             </h1>
             <p className="max-w-xl mx-auto text-xl text-gray-300">
               Professional resume templates with a powerful side-by-side LaTeX editor. Edit and download your resume in minutes.
@@ -305,26 +305,13 @@ const Resumeio = () => {
         <p className="text-gray-400 text-sm text-center">See how your resume keywords match with the job description</p>
       </div>
     </div>
-
-    <div className="mt-12 text-center">
-      <button className="bg-indigo-600 px-8 py-3 text-lg font-medium rounded-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-        <a href="/#/enhance">Browse All Templates</a>
-      </button>
-    </div>
   </div>
 </section>
 
       {/* Editor Demo */}
       <section id="editor" className="py-16 bg-gray-800 animate-on-scroll">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-extrabold sm:text-4xl">
-              Intuitive Side-by-Side Editor
-            </h2>
-            <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
-              Edit LaTeX code on one side, see changes instantly on the other
-            </p>
-          </div>
+
 
           <div className="bg-gray-900 rounded-lg shadow-xl overflow-hidden border border-gray-700">
             <div className="flex items-center px-4 py-2 bg-gray-800 border-b border-gray-700">
@@ -333,39 +320,91 @@ const Resumeio = () => {
                 <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                 <div className="w-3 h-3 bg-green-500 rounded-full"></div>
               </div>
-              <div className="mx-auto text-gray-400">{currentTemplate} Template</div>
             </div>
             <div className="flex flex-col lg:flex-row">
               <div className="w-full lg:w-1/2 p-4 bg-gray-900 border-r border-gray-700">
                 <div className="flex justify-between mb-2">
-                  <span className="text-gray-400">LaTeX Code</span>
-                  <div className="flex space-x-2">
-                    <button className="px-2 py-1 bg-gray-800 text-xs rounded hover:bg-gray-700">Format</button>
-                    <button className="px-2 py-1 bg-gray-800 text-xs rounded hover:bg-gray-700">Copy</button>
-                  </div>
+                  <span className="text-gray-400">Options to Choose from</span>
+                  <div className="flex space-x-2"></div>
                 </div>
-                <div className="bg-gray-800 p-4 rounded-lg font-mono text-sm text-gray-300 h-96 overflow-auto">
-                  <pre className="whitespace-pre-wrap">{editorCode}</pre>
+                <div className="w-full  bg-gray-900 border-r border-gray-700">
+                  
+                  <div className="grid grid-cols-2 gap-3 h-96 overflow-auto">
+                    {/* ATS Score Box */}
+                    <div className="bg-gray-800 p-4 rounded-lg border border-gray-700 hover:border-indigo-400 transition-colors">
+                      <div className="flex items-center mb-3">
+                        <svg className="w-6 h-6 text-indigo-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                        <h3 className="font-medium text-white">ATS Score</h3>
+                      </div>
+                      <p className="text-sm text-gray-300 mb-3">Calculate how well your resume performs in ATS systems</p>
+                      <ul className="text-xs text-gray-400 space-y-1 pl-4 list-disc">
+                        <li>Scan resume formatting</li>
+                        <li>Analyze compatibility</li>
+                        <li>Get detailed score reports</li>
+                      </ul>
+                    </div>
+                    
+                    {/* ATS Enhancer Box */}
+                    <div className="bg-gray-800 p-4 rounded-lg border border-gray-700 hover:border-indigo-400 transition-colors">
+                      <div className="flex items-center mb-3">
+                        <svg className="w-6 h-6 text-indigo-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                        </svg>
+                        <h3 className="font-medium text-white">ATS Enhancer</h3>
+                      </div>
+                      <p className="text-sm text-gray-300 mb-3">Make your resume more ATS-friendly with targeted improvements</p>
+                      <ul className="text-xs text-gray-400 space-y-1 pl-4 list-disc">
+                        <li>Fix formatting issues</li>
+                        <li>Optimize document structure</li>
+                        <li>Improve content readability</li>
+                      </ul>
+                    </div>
+                    
+                    {/* Resume Feedback Box */}
+                    <div className="bg-gray-800 p-4 rounded-lg border border-gray-700 hover:border-indigo-400 transition-colors">
+                      <div className="flex items-center mb-3">
+                        <svg className="w-6 h-6 text-indigo-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        <h3 className="font-medium text-white">Resume Feedback</h3>
+                      </div>
+                      <p className="text-sm text-gray-300 mb-3">Receive detailed feedback on each section of your resume</p>
+                      <ul className="text-xs text-gray-400 space-y-1 pl-4 list-disc">
+                        <li>Section-by-section analysis</li>
+                        <li>Content improvement suggestions</li>
+                        <li>Structure recommendations</li>
+                      </ul>
+                    </div>
+                    
+                    {/* Keyword Matching Box */}
+                    <div className="bg-gray-800 p-4 rounded-lg border border-gray-700 hover:border-indigo-400 transition-colors">
+                      <div className="flex items-center mb-3">
+                        <svg className="w-6 h-6 text-indigo-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                        <h3 className="font-medium text-white">Keyword Matching</h3>
+                      </div>
+                      <p className="text-sm text-gray-300 mb-3">See how your resume keywords match with job descriptions</p>
+                      <ul className="text-xs text-gray-400 space-y-1 pl-4 list-disc">
+                        <li>Identify missing key terms</li>
+                        <li>Optimize keyword frequency</li>
+                        <li>Match industry terminology</li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div className="w-full lg:w-1/2 p-4 bg-gray-800">
-                <div className="flex justify-between mb-2">
-                  <span className="text-gray-400">Live Preview</span>
-                  <div className="flex space-x-2">
-                    <button className="px-2 py-1 bg-indigo-600 text-xs rounded hover:bg-indigo-500">Download PDF</button>
-                    <button className="px-2 py-1 bg-gray-700 text-xs rounded hover:bg-gray-600">Export</button>
-                  </div>
-                </div>
-                <div className="bg-white rounded-lg h-96 flex justify-center items-center">
-                  <img src={example2} alt="Resume Preview" className="shadow-lg" />
-                </div>
+                <img className="w-full h-full " src={preview} alt="example vid"/>
               </div>
             </div>
           </div>
-          
+
           <div className="mt-8 text-center">
             <button className="bg-indigo-600 px-8 py-3 text-lg font-medium rounded-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-              <a href="/#/latex">Try Editor Now</a>
+              <a href="/#/enhance">Try Enhancing Your Resume</a>
             </button>
           </div>
         </div>

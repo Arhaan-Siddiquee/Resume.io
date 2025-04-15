@@ -328,8 +328,8 @@ CERTIFICATIONS
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl shadow-2xl">
-      <h2 className="text-3xl font-bold text-center mb-8 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+    <div className="w-full max-w-4xl mx-auto p-6  mt-[10px] bg-gray-900 rounded-xl shadow-2xl">
+      <h2 className="text-3xl font-bold text-center mb-8 text-yellow-400">
         Resume Assistant
       </h2>
       
@@ -339,16 +339,16 @@ CERTIFICATIONS
             <React.Fragment key={stepNumber}>
               <div className={`flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 ${
                 step >= stepNumber 
-                  ? 'bg-gradient-to-br from-blue-600 to-purple-600 text-white shadow-lg'
-                  : 'bg-gray-200 text-gray-500'
+                  ? 'bg-yellow-400 text-gray-200 shadow-lg'
+                  : 'bg-gray-800 text-gray-500'
               }`}>
                 {stepNumber}
               </div>
               {stepNumber < 4 && (
                 <div className={`flex-1 h-1 mx-2 transition-all duration-300 ${
                   step > stepNumber 
-                    ? 'bg-gradient-to-r from-blue-600 to-purple-600'
-                    : 'bg-gray-200'
+                    ? 'bg-yellow-400'
+                    : 'bg-gray-800'
                 }`}></div>
               )}
             </React.Fragment>
@@ -358,7 +358,7 @@ CERTIFICATIONS
       
       {step === 1 && (
         <div className="flex flex-col items-center">
-          <div className="border-2 border-dashed border-gray-300 rounded-xl p-12 w-full max-w-md text-center bg-white hover:border-blue-500 transition-all duration-300">
+          <div className="border-2 border-dashed border-gray-700 rounded-xl p-12 w-full max-w-md text-center bg-gray-800 hover:border-yellow-400 transition-all duration-300">
             <input
               type="file"
               onChange={handleFileChange}
@@ -373,16 +373,16 @@ CERTIFICATIONS
             >
               {file ? (
                 <>
-                  <FileText size={48} className="text-blue-500 mb-4" />
-                  <p className="text-gray-800 font-medium">{file.name}</p>
-                  <p className="text-gray-500 text-sm mt-2">
+                  <FileText size={48} className="text-yellow-400 mb-4" />
+                  <p className="text-gray-200 font-medium">{file.name}</p>
+                  <p className="text-gray-400 text-sm mt-2">
                     {(file.size / 1024 / 1024).toFixed(2)} MB
                   </p>
                 </>
               ) : (
                 <>
-                  <Upload size={48} className="text-gray-400 mb-4" />
-                  <p className="text-gray-800 font-medium">Upload your resume</p>
+                  <Upload size={48} className="text-gray-500 mb-4" />
+                  <p className="text-gray-200 font-medium">Upload your resume</p>
                   <p className="text-gray-500 text-sm mt-2">PDF files only</p>
                 </>
               )}
@@ -393,8 +393,8 @@ CERTIFICATIONS
             onClick={goToJobDescription}
             className={`mt-8 px-8 py-3 rounded-xl font-medium transition-all duration-300 ${
               file
-                ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg'
-                : 'bg-gray-200 text-gray-500 cursor-not-allowed'
+                ? 'bg-yellow-400 text-gray-200 hover:bg-yellow-500 shadow-lg'
+                : 'bg-gray-800 text-gray-500 cursor-not-allowed'
             }`}
             disabled={!file}
           >
@@ -405,19 +405,19 @@ CERTIFICATIONS
       
       {step === 2 && (
         <div className="flex flex-col items-center">
-          <div className="w-full max-w-lg bg-white p-8 rounded-xl shadow-lg">
-            <h3 className="text-2xl font-semibold mb-4 text-gray-800">Enter Job Description</h3>
-            <p className="text-gray-600 mb-6">
+          <div className="w-full max-w-lg bg-gray-800 p-8 rounded-xl shadow-lg">
+            <h3 className="text-2xl font-semibold mb-4 text-yellow-400">Enter Job Description</h3>
+            <p className="text-gray-300 mb-6">
               Paste the job description to help us provide more tailored analysis and recommendations.
             </p>
             
             <div className="relative">
-              <Briefcase className="absolute top-3 left-3 text-gray-400" size={20} />
+              <Briefcase className="absolute top-3 left-3 text-gray-500" size={20} />
               <textarea
                 value={jobDescription}
                 onChange={(e) => setJobDescription(e.target.value)}
                 placeholder="Paste job description here..."
-                className="w-full h-64 p-3 pl-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+                className="w-full h-64 p-3 pl-10 border border-gray-700 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent resize-none bg-gray-900 text-gray-200"
               />
             </div>
           </div>
@@ -425,7 +425,7 @@ CERTIFICATIONS
           <div className="flex gap-4 mt-8">
             <button
               onClick={() => setStep(1)}
-              className="px-8 py-3 rounded-xl font-medium border border-gray-300 hover:bg-gray-50 transition-all duration-300"
+              className="px-8 py-3 rounded-xl font-medium border border-gray-700 hover:border-gray-600 hover:bg-gray-800 transition-all duration-300 text-gray-300"
             >
               Back
             </button>
@@ -434,8 +434,8 @@ CERTIFICATIONS
               onClick={goToOptions}
               className={`px-8 py-3 rounded-xl font-medium transition-all duration-300 ${
                 jobDescription.trim()
-                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg'
-                  : 'bg-gray-200 text-gray-500 cursor-not-allowed'
+                  ? 'bg-yellow-400 text-gray-200 hover:bg-yellow-500 shadow-lg'
+                  : 'bg-gray-800 text-gray-500 cursor-not-allowed'
               }`}
               disabled={!jobDescription.trim()}
             >
@@ -447,21 +447,21 @@ CERTIFICATIONS
       
       {step === 3 && (
         <div className="flex flex-col items-center">
-          <h3 className="text-2xl font-semibold mb-6 text-gray-800">What would you like to do with your resume?</h3>
+          <h3 className="text-2xl font-semibold mb-6 text-yellow-400">What would you like to do with your resume?</h3>
           
           <div className="grid gap-4 w-full max-w-lg">
             {actions.map((action) => (
               <button
                 key={action.id}
                 onClick={() => handleActionSelect(action.id)}
-                className={`p-6 rounded-xl border-2 text-left transition-all duration-300 ${
+                className={`p-6 rounded-xl border text-left transition-all duration-300 ${
                   selectedAction === action.id
-                    ? 'border-blue-500 bg-blue-50 shadow-md'
-                    : 'border-gray-200 hover:border-gray-300 bg-white'
+                    ? 'border-yellow-400 bg-gray-800 shadow-md'
+                    : 'border-gray-700 hover:border-gray-600 bg-gray-900'
                 }`}
               >
-                <div className="font-medium mb-1 text-gray-800">{action.label}</div>
-                <div className="text-sm text-gray-600">{action.description}</div>
+                <div className="font-medium mb-1 text-gray-200">{action.label}</div>
+                <div className="text-sm text-gray-400">{action.description}</div>
               </button>
             ))}
           </div>
@@ -469,7 +469,7 @@ CERTIFICATIONS
           <div className="flex gap-4 mt-8">
             <button
               onClick={() => setStep(2)}
-              className="px-8 py-3 rounded-xl font-medium border border-gray-300 hover:bg-gray-50 transition-all duration-300"
+              className="px-8 py-3 rounded-xl font-medium border border-gray-700 hover:border-gray-600 hover:bg-gray-800 transition-all duration-300 text-gray-300"
             >
               Back
             </button>
@@ -479,8 +479,8 @@ CERTIFICATIONS
               disabled={!selectedAction || isLoading}
               className={`px-8 py-3 rounded-xl font-medium flex items-center gap-2 transition-all duration-300 ${
                 selectedAction && !isLoading
-                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg'
-                  : 'bg-gray-200 text-gray-500 cursor-not-allowed'
+                  ? 'bg-yellow-400 text-gray-200 hover:bg-yellow-500 shadow-lg'
+                  : 'bg-gray-800 text-gray-500 cursor-not-allowed'
               }`}
             >
               {isLoading ? 'Processing...' : 'Analyze Resume'}
@@ -492,15 +492,15 @@ CERTIFICATIONS
       
       {step === 4 && (
         <div className="flex flex-col items-center">
-          <h3 className="text-2xl font-semibold mb-6 text-gray-800">Analysis Results</h3>
+          <h3 className="text-2xl font-semibold mb-6 text-yellow-400">Analysis Results</h3>
           
           <div className="flex justify-end w-full mb-2">
             <button
               onClick={readText}
               className={`flex items-center gap-2 px-6 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
                 isReading 
-                  ? 'bg-red-500 text-white hover:bg-red-600 shadow-md'
-                  : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-md'
+                  ? 'bg-red-600 text-white hover:bg-red-700 shadow-md'
+                  : 'bg-yellow-400 text-gray-200 hover:bg-yellow-500 shadow-md'
               }`}
             >
               <Volume2 size={16} />
@@ -508,31 +508,31 @@ CERTIFICATIONS
             </button>
           </div>
           
-          <div className="bg-white p-8 rounded-xl border border-gray-200 w-full mb-8 prose max-w-none shadow-lg">
+          <div className="bg-gray-800 p-8 rounded-xl border border-gray-700 w-full mb-8 prose prose-invert max-w-none shadow-lg">
             <div dangerouslySetInnerHTML={{ 
-              __html: result.replace(/^# (.*$)/gm, '<h2 class="text-2xl font-bold text-gray-800">$1</h2>')
-                          .replace(/^## (.*$)/gm, '<h3 class="text-xl font-semibold text-gray-800">$1</h3>')
-                          .replace(/^### (.*$)/gm, '<h4 class="text-lg font-medium text-gray-800">$1</h4>')
+              __html: result.replace(/^# (.*$)/gm, '<h2 class="text-2xl font-bold text-yellow-400">$1</h2>')
+                          .replace(/^## (.*$)/gm, '<h3 class="text-xl font-semibold text-yellow-400">$1</h3>')
+                          .replace(/^### (.*$)/gm, '<h4 class="text-lg font-medium text-yellow-300">$1</h4>')
                           .replace(/\n/g, '<br>')
-                          .replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold">$1</strong>')
-                          .replace(/\*(.*?)\*/g, '<em class="italic">$1</em>')
-                          .replace(/✅/g, '<span class="text-green-500">✅</span>')
-                          .replace(/⚠️/g, '<span class="text-yellow-500">⚠️</span>')
-                          .replace(/❌/g, '<span class="text-red-500">❌</span>')
+                          .replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold text-gray-200">$1</strong>')
+                          .replace(/\*(.*?)\*/g, '<em class="italic text-gray-300">$1</em>')
+                          .replace(/✅/g, '<span class="text-green-400">✅</span>')
+                          .replace(/⚠️/g, '<span class="text-yellow-400">⚠️</span>')
+                          .replace(/❌/g, '<span class="text-red-400">❌</span>')
             }} />
           </div>
           
           <div className="flex gap-4">
             <button
               onClick={() => setStep(3)}
-              className="px-8 py-3 rounded-xl font-medium border border-gray-300 hover:bg-gray-50 transition-all duration-300"
+              className="px-8 py-3 rounded-xl font-medium border border-gray-700 hover:border-gray-600 hover:bg-gray-800 transition-all duration-300 text-gray-300"
             >
               Try Another Action
             </button>
             
             <button
               onClick={resetForm}
-              className="px-8 py-3 rounded-xl font-medium bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg transition-all duration-300"
+              className="px-8 py-3 rounded-xl font-medium bg-yellow-400 text-gray-200 hover:bg-yellow-500 shadow-lg transition-all duration-300"
             >
               Start Over
             </button>
