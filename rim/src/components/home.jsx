@@ -246,38 +246,73 @@ const Resumeio = () => {
 
       {/* Templates Showcase */}
       <section id="templates" className="py-16 animate-on-scroll">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-extrabold sm:text-4xl">
-              Professional LaTeX Templates
-            </h2>
-            <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
-              Choose from our collection of professionally designed templates
-            </p>
-          </div>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-16">
+      <h2 className="text-3xl font-extrabold sm:text-4xl">
+        Enhance your Resume
+      </h2>
+      <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
+        Boost your resume with ATS-friendly optimization to ensure you get noticed.
+      </p>
+    </div>
 
-          <div className="flex flex-wrap justify-center gap-6">
-            {templates.map((template) => (
-              <div 
-                key={template.id} 
-                className={`w-48 p-4 rounded-lg cursor-pointer transition-all duration-300 ${currentTemplate === template.name ? 'bg-indigo-900 border-2 border-indigo-500' : 'bg-gray-800 border border-gray-700 hover:border-indigo-400'}`}
-                onClick={() => setCurrentTemplate(template.name)}
-              >
-                <div className="bg-white h-48 mb-4 rounded overflow-hidden">
-                  <img src={template.preview} alt={`${template.name} template`} className="w-full h-full object-cover" />
-                </div>
-                <h3 className="text-center font-medium">{template.name}</h3>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-12 text-center">
-            <button className="bg-indigo-600 px-8 py-3 text-lg font-medium rounded-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-              Browse All Templates
-            </button>
-          </div>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div 
+        className={`p-6 rounded-lg cursor-pointer transition-all duration-300 transform hover:scale-105 bg-gray-800 border border-gray-700 hover:border-indigo-400`}
+      >
+        <div className="h-12 mb-4 flex items-center justify-center">
+          <svg className="w-10 h-10 text-indigo-400 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+          </svg>
         </div>
-      </section>
+        <h3 className="text-center font-medium text-lg mb-2">Get ATS Score</h3>
+        <p className="text-gray-400 text-sm text-center">Calculate how well your resume might perform in ATS systems</p>
+      </div>
+
+      <div 
+        className={`p-6 rounded-lg cursor-pointer transition-all duration-300 transform hover:scale-105 bg-gray-800 border border-gray-700 hover:border-indigo-400`}
+      >
+        <div className="h-12 mb-4 flex items-center justify-center">
+          <svg className="w-10 h-10 text-indigo-400 transition-all duration-500 hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+          </svg>
+        </div>
+        <h3 className="text-center font-medium text-lg mb-2 group-hover:text-indigo-300 transition-colors duration-300">ATS Enhancer</h3>
+        <p className="text-gray-400 text-sm text-center">Get specific suggestions to make your resume more ATS-friendly</p>
+      </div>
+
+      <div 
+        className={`p-6 rounded-lg cursor-pointer transition-all duration-300 transform hover:scale-105 bg-gray-800 border border-gray-700 hover:border-indigo-400`}
+      >
+        <div className="h-12 mb-4 flex items-center justify-center overflow-hidden">
+          <svg className="w-10 h-10 text-indigo-400 hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+        </div>
+        <h3 className="text-center font-medium text-lg mb-2">Resume Feedback</h3>
+        <p className="text-gray-400 text-sm text-center">Receive detailed feedback on each section of your resume</p>
+      </div>
+
+      <div 
+        className={`p-6 rounded-lg cursor-pointer transition-all duration-300 transform hover:scale-105 bg-gray-800 border border-gray-700 hover:border-indigo-400`}
+      >
+        <div className="h-12 mb-4 flex items-center justify-center">
+          <svg className="w-10 h-10 text-indigo-400 transition-transform duration-500 hover:scale-125" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </div>
+        <h3 className="text-center font-medium text-lg mb-2">Match Keywords</h3>
+        <p className="text-gray-400 text-sm text-center">See how your resume keywords match with the job description</p>
+      </div>
+    </div>
+
+    <div className="mt-12 text-center">
+      <button className="bg-indigo-600 px-8 py-3 text-lg font-medium rounded-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        <a href="/#/enhance">Browse All Templates</a>
+      </button>
+    </div>
+  </div>
+</section>
 
       {/* Editor Demo */}
       <section id="editor" className="py-16 bg-gray-800 animate-on-scroll">
